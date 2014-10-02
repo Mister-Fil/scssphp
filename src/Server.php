@@ -44,6 +44,8 @@ class Server
         switch (true) {
             case isset($_GET['p']):
                 return $_GET['p'];
+            case isset($_SERVER['QUERY_STRING']):
+                return $_SERVER['QUERY_STRING'];
             case isset($_SERVER['PATH_INFO']):
                 return $_SERVER['PATH_INFO'];
             case isset($_SERVER['DOCUMENT_URI']):
